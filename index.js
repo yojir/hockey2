@@ -2,8 +2,8 @@ const $canvas = document.getElementById("myCanvas");
 const $ctx = $canvas.getContext("2d");
 
 if($canvas.offsetLeft <= 0){
-    $canvas.width = 300;
-    $canvas.height = 200;
+    $canvas.width = 320;
+    $canvas.height = 400;
 }
 
 let x = $canvas.width/2;
@@ -20,9 +20,9 @@ let ballColor = 'skyblue';
 let paddleColor = 'blue';
 let paddleColorE = 'black'
 const paddleHeightM = 8;
-const paddleWidthM = 120;
+let paddleWidthM = 1.5*$canvas.width/8;
 const paddleHeightE = 8;
-let paddleWidthE = 120;
+let paddleWidthE = 1.5*$canvas.width/8;
 let paddleEMove = 20;
 const moveEasy = 10;
 const moveNormal = 15;
@@ -200,7 +200,7 @@ const handleClick = (e) => {
     }
     else{
         paddleEMove = moveHard;
-        paddleWidthE = 180;
+        paddleWidthE = 1.5*paddleWidthE;
         tex.innerText = '難易度：Hard';
     }
     window.alert('Are you ready??');
