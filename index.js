@@ -50,7 +50,7 @@ const reset = (a) => {
 document.addEventListener("keydown",(e) => {keyDownHandler(e);});
 document.addEventListener("keyup", (e) => {keyUpHandler(e);});
 document.addEventListener("mousemove", (e) => mouseMoveHandler(e));
-document.addEventListener("touchmove", (e) => touchMoveHandler(e));
+document.addEventListener("touchmove", (e) => touchMoveHandler(e), {passive: false});
 
 const keyDownHandler = (e) => {
     if(e.key == "Right" || e.key == "ArrowRight") {
@@ -78,7 +78,6 @@ const mouseMoveHandler = (e) => {
 };
 
 const touchMoveHandler = (e) => {
-    e.preventDefault();
     let relativeXT = e.changedTouches[0].clientX - $canvas.offsetLeft;
     if(relativeXT > 0 && relativeXT < $canvas.width) {
         paddleXMW = relativeXT - paddleWidthE/2;
