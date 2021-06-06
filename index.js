@@ -73,7 +73,7 @@ const mouseMoveHandler = (e) => {
 };
 
 const touchMoveHandler = (e) => {
-    let relativeXT = e.clientX - $canvas.offsetLeft;
+    let relativeXT = e.changedTouches[0].clientX - $canvas.offsetLeft;
     if(relativeXT > 0 && relativeXT < $canvas.width) {
         paddleXMW = relativeXT - paddleWidthE/2;
     }
