@@ -1,6 +1,11 @@
 const $canvas = document.getElementById("myCanvas");
 const $ctx = $canvas.getContext("2d");
 
+if($canvas.offsetLeft <= 0){
+    $canvas.width = 300;
+    $canvas.height = 200;
+}
+
 let x = $canvas.width/2;
 let y = $canvas.height-30;
 
