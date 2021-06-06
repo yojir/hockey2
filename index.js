@@ -50,7 +50,6 @@ const reset = (a) => {
 document.addEventListener("keydown",(e) => {keyDownHandler(e);});
 document.addEventListener("keyup", (e) => {keyUpHandler(e);});
 document.addEventListener("mousemove", (e) => mouseMoveHandler(e));
-document.addEventListener("touchmove", (e) => touchMoveHandler(e));
 
 const keyDownHandler = (e) => {
     if(e.key == "Right" || e.key == "ArrowRight") {
